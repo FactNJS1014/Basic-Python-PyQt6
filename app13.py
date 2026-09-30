@@ -17,13 +17,26 @@ class MainWindow(QWidget):
 
         # widgets
 
-        btn1 = QPushButton("Button01")
-        btn1.clicked.connect(self.showName)  # signal
-        layout.addWidget(btn1)
+        btn1 = QPushButton("Info")
+        btn2 = QPushButton("Warning")
+        btn3 = QPushButton("Error")
 
-    def showName(self):  # slot
-        print(self.sender().text())
-        # QMessageBox.information(self, "Button Info", "Button is clicked")
+        btn1.clicked.connect(self.showMessage)
+        btn2.clicked.connect(self.showMessage)
+        btn3.clicked.connect(self.showMessage)
+
+        layout.addWidget(btn1)
+        layout.addWidget(btn2)
+        layout.addWidget(btn3)
+
+    def showMessage(self):  # slot
+        sender = self.sender()
+        if sender.text() == "Info":
+            QMessageBox.information(self, "Button Info", "Button is clicked")
+        elif sender.text() == "Warning":
+            QMessageBox.warning(self, "Button Warning", "Button is clicked")
+        elif sender.text() == "Error":
+            QMessageBox.critical(self, "Button Error", "Button is clicked")
 
 
 app = QCoreApplication.instance()
