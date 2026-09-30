@@ -1,0 +1,15 @@
+ *{
+    font-size: 15px;
+    font-family: tahoma;
+}
+
+QPushButton{
+    border: 1px solid #8f8f91;
+    min-width: 80px;
+    padding: 6px;
+    background-color: QLinearGradient(x1: 0, y1: 0, x2: 0, y2: 1,
+    stop: 0 #e8f5ff, stop: 1 #c4e1ff);
+    border-radius: 6px;
+    color: black;
+            
+}
